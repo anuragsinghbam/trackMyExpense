@@ -1,0 +1,10 @@
+<%- layout('boilerplate') %>
+<h1>Expense Tracker</h1>
+
+<% if(!currentUser) { %>
+<a href="/login">Login</a>
+<a href="/register">Register</a>
+<% } else { %> 
+
+<a href="/logout">Logout</a>
+<% } %>
