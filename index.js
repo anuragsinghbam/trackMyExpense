@@ -87,6 +87,8 @@ app.use('/', expenseRouter)
 app.use('/', balanceRouter)
 app.use('/', userRouter)
 
-app.listen(3000, () => {
-  console.log('Server Started')
+const port = process.env.PORT || 3000
+
+app.listen(port, () => {
+  console.log(`Serving on port ${port}`)
 })
