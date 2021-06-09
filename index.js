@@ -23,7 +23,7 @@ const searchRouter = require('./routes/search')
 
 const User = require('./models/users')
 
-const dbUrl = process.env.DB_URL || 'mongodb://localhost/expenses'
+const dbUrl = 'mongodb://localhost/expenses'
 
 mongoose.connect(dbUrl, {
   useNewUrlParser: true,

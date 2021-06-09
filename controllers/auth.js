@@ -14,7 +14,7 @@ module.exports.registerUser = async (req, res) => {
     const newUser = new User({
       name,
       email,
-      username: username,
+      username: username.toLowerCase(),
       registrationDate: new Date(),
     })
     const registeredUser = await User.register(newUser, password)
