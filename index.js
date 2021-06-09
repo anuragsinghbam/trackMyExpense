@@ -21,10 +21,9 @@ const balanceRouter = require('./routes/balance')
 const expenseRouter = require('./routes/expense')
 const searchRouter = require('./routes/search')
 
-const { isLoggedIn } = require('./controllers/auth')
 const User = require('./models/users')
 
-const dbUrl = 'mongodb://localhost/expenses'
+const dbUrl = process.env.DB_URL || 'mongodb://localhost/expenses'
 
 mongoose.connect(dbUrl, {
   useNewUrlParser: true,
