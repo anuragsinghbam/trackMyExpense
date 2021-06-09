@@ -9,15 +9,15 @@
 <form action="/expense" method="POST">
   <div class="form-input">
     <label for="name">Spent On</label>
-    <input type="text" name="name" id="name" />
+    <input type="text" name="name" id="name" required />
   </div>
   <div class="form-input">
     <label for="amount">Amount</label>
-    <input type="number" name="amount" id="amount" min="0"/>
+    <input type="number" name="amount" id="amount" min="0" required />
   </div>
   <div class="form-input">
     <label for="tags">Tags</label>
-    <input type="text" name="tags" id="tags" />
+    <input type="text" name="tags" id="tags" required />
   </div>
 
   <button>Add Expense</button>
@@ -26,7 +26,7 @@
 <form action="/<%= user.username %>/search" method="GET">
   <div class="form-input">
     <label for="tag">Tag</label>
-    <input type="text" name="tag" id="tag" />
+    <input type="text" name="tag" id="tag" required/>
   </div>
 
   <button>Search</button>
