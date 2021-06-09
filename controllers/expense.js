@@ -24,7 +24,7 @@ module.exports.expense = async (req, res) => {
 
 module.exports.deleteExpense = async (req, res) => {
   const expense = await Expense.findById(req.params.id)
-  const user = await User.findById(req.user.id)
+  const user = await User.findByIdAndUpdate(req.user.id, { $pull: { expenses: req.params.id} })
   user.balance += expense.amount
   user.totalExpense -= expense.amount
   user.save()
