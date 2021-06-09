@@ -5,8 +5,7 @@ const { isLoggedIn } = require('../controllers/auth')
 
 const isOwner = (req, res, next) => {
   if(req.user.username !== req.params.username) {
-    req.flash('error', 'You and not allowed to access.')
-    res.redirect('/')
+    return res.redirect('/')
   }
   next()
 }

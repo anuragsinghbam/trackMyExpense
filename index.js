@@ -24,7 +24,7 @@ const searchRouter = require('./routes/search')
 const { isLoggedIn } = require('./controllers/auth')
 const User = require('./models/users')
 
-const dbUrl = process.env.DB_URL || 'mongodb://localhost/expenses'
+const dbUrl = 'mongodb://localhost/expenses'
 
 mongoose.connect(dbUrl, {
   useNewUrlParser: true,
@@ -77,7 +77,7 @@ app.use((req, res, next) => {
 
 app.get('/', async (req, res) => {
   if(req.user) {
-    res.redirect(`/${req.user.username}`)
+    return res.redirect(`/${req.user.username}`)
   }
   res.render('index')
 })
