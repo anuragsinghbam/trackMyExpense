@@ -76,6 +76,9 @@ app.use((req, res, next) => {
 })
 
 app.get('/', async (req, res) => {
+  if(req.user) {
+    res.redirect(`/${req.user.username}`)
+  }
   res.render('index')
 })
 
