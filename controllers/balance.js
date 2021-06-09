@@ -6,8 +6,8 @@ module.exports.renderBalanceForm = (req, res) => {
 }
 
 module.exports.updateBalance = async (req, res) => {
-  const user = await User.findById(req.user.id)
-  user.balance = req.body.balance
+  const user = await User.findById(req.user.id).populate('expenses')
+  user.balance = parseInt(req.body.balance)
   let totalExpense = 0
   for(let expense of user.expenses) {
     totalExpense += expense.amount
