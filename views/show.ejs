@@ -1,15 +1,84 @@
 <%- layout('boilerplate') %>
 
+<header class="header">
+  <div class="header-contents">
+    <a href="/">
+      <h1 class="greet-user">
+        Hello, <br />
+        <span><%= user.firstName%></span>
+      </h1>
+    </a>
+    <form
+      class="search-form"
+      action="/<%= user.username %>/search"
+      method="GET"
+    >
+      <input
+        class="search-input"
+        type="text"
+        name="tag"
+        id="tag"
+        placeholder="Search..."
+        required
+      />
+      <button class="search-btn">
+        <div class="search-icon">
+          <i class="fas fa-search"></i>
+        </div>
+      </button>
+    </form>
+  </div>
+</header>
 
-<h1>Hi, <%= user.name%></h1>
-<h2>Balance: &#8377;<%= user.balance %></h2>
+<div class="expense-balance-container">
+  <div class="balance">
+    <p>Balance</p>
+    <h3>&#8377; <%= user.balance %></h3>
+  </div>
 
-<a href="/balance">Update balance</a>
+  <div class="total-expense">
+    <p>Total expense</p>
+    <h3>
+      &#8377; <%= user.totalExpense %> <span><%= tag ? `(${tag})` : '' %></span>
+    </h3>
+  </div>
+</div>
 
-<form action="/expense" method="POST">
+<% for(expense of user.expenses.reverse()) { %>
+<div class="expense">
+  <div class="left-part">
+    <h3><%= expense.name %></h3>
+    <p><%= expense.date.toDateString() %></p>
+  </div>
+  <div class="right-part">
+    <p>&#8377;<%= expense.amount %></p>
+    <form action="/expense/<%= expense.id %>?_method=DELETE" method="POST">
+      <button class="delete-btn"><i class="fas fa-trash"></i></button>
+    </form>
+  </div>
+</div>
+<% } %>
+
+<nav class="navbar">
+  <div class="links">
+    <a href="/">
+      <img src="images/home.svg" alt="home icon" />
+    </a>
+    <div class="add-expense">
+      <img src="images/plus-circle.svg" alt="add icon" />
+    </div>
+    <a href="/">
+      <img src="images/user.svg" alt="user icon" />
+    </a>
+  </div>
+</nav>
+
+<div class="overlay"></div>
+
+<form class="expense-form" action="/expense" method="POST">
   <div class="form-input">
     <label for="name">Spent On</label>
-    <input type="text" name="name" id="name" required />
+    <input type="text" name="name" id="name" autofocus required />
   </div>
   <div class="form-input">
     <label for="amount">Amount</label>
@@ -20,31 +89,10 @@
     <input type="text" name="tags" id="tags" required />
   </div>
 
-  <button>Add Expense</button>
-</form>
-<h3>Search Expense</h3>
-<form action="/<%= user.username %>/search" method="GET">
-  <div class="form-input">
-    <label for="tag">Tag</label>
-    <input type="text" name="tag" id="tag" required/>
-  </div>
-
-  <button>Search</button>
+  <button class="add-btn"><img src="images/check-circle.svg" alt="" /></button>
 </form>
 
-<% for(expense of user.expenses.reverse()) { %>
-<div class="expense" style="border: 2px solid #000; margin: 1em; padding: 1em; display: inline-block">
-  <h3><%= expense.name %></h3>
-  <p>&#8377;<%= expense.amount %></p>
-  <p><%= expense.date.toLocaleString() %></p>
-  <form action="/expense/<%= expense.id %>?_method=DELETE" method="POST">
-    <button>Delete</button>
-  </form>
-</div>
-<% } %>
 
-<h2>Total expense <%= tag ? `on ${tag}` : '' %> : &#8377;<%= user.totalExpense %> </h2>
 
-<a href="/logout">Logout</a>
-
-<!-- Author: Anurag Singh  -->
+<!-- <a href="/logout">Logout</a>
+<a href="/balance">Update balance</a> -->
