@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap');
 
-
-
 * {
   box-sizing: border-box;
 }
@@ -22,18 +20,10 @@ a {
 }
 .container {
   padding: 0.001em 0;
-  background: #16242f;
   min-height: 100vh;
   position: relative;
-}
-
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 600px;
-    margin: 2em auto;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    border-radius: 20px;
-  }
+  margin: 0 auto;
+  background: #16242f;
 }
 
 .greet-user {
@@ -78,7 +68,6 @@ a {
   padding: 0 0.6em 0 0.4em;
   border-radius: 0 55px 55px 0;
   color: #ddd;
-  font-size: 0.7em;
 }
 
 .search-btn:hover {
@@ -88,7 +77,7 @@ a {
 .search-form {
   display: flex;
   align-items: center;
-  border: 2px solid #1E679E;
+  border: 2px solid #1e679e;
   border-radius: 55px;
   box-shadow: 0 0 10px rgba(30, 103, 158, 0.4);
 }
@@ -146,7 +135,7 @@ a {
 .navbar {
   background-color: #16242f;
   height: 3.25em;
-  position: sticky;
+  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
@@ -156,6 +145,7 @@ a {
 .links {
   display: flex;
   height: 100%;
+  max-width: 700px;
   align-items: center;
   width: 90%;
   margin: 0 auto;
@@ -195,7 +185,6 @@ a {
   padding: 0.77em 1em;
   border-radius: 55px 0 0 55px;
   width: 12em;
-  font-size: 0.7em;
 }
 
 .expense-form input {
@@ -206,7 +195,7 @@ a {
   width: 17em;
   padding: 0.77em 1em;
   border-radius: 55px;
-  border: 2px solid #1E679E;
+  border: 2px solid #1e679e;
   box-shadow: 0 0 10px rgba(30, 103, 158, 0.4);
 }
 
@@ -250,12 +239,6 @@ a {
   opacity: 1;
 }
 
-@media screen and (min-width: 768px) {
-  .navbar {
-    border-radius: 0  0 20px 20px;
-  }
-}
-
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 50px #16242f inset;
   -webkit-text-fill-color: #fff;
@@ -266,3 +249,18 @@ input:-webkit-autofill:focus {
   -webkit-text-fill-color: #fff;
 }
 
+@media (max-width: 350px) {
+  .search-input, .search-btn {
+    font-size: 0.75em;
+  }
+}
+
+@media (max-width: 300px) {
+  .search-input, .search-btn {
+    font-size: 0.7em;
+  }
+
+  html {
+    zoom: 80%;
+  }
+}
