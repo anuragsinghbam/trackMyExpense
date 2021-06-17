@@ -74,6 +74,7 @@ app.use((req, res, next) => {
   next()
 })
 
+
 app.get('/', async (req, res) => {
   if(req.user) {
     return res.redirect(`/${req.user.username}`)

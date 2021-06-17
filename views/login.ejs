@@ -1,7 +1,10 @@
 <%- layout('boilerplate') %>
 
-<h1>Login</h1>
-  <form action="/login" method="POST">
+<div class="register-title">
+  <h1>Login</h1>
+<p>And start tracking your expenses!</p>
+</div>
+  <form class="register-form" action="/login" method="POST">
     <div class="form-input">
       <label for="username">Username</label>
       <input type="text" name="username" id="username" required />
@@ -10,5 +13,5 @@
       <label for="password">Password</label>
       <input type="password" name="password" id="password" required />
     </div>
-    <button>Submit</button>
+    <button class="register-btn">Login</button>
   </form>
