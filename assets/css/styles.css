@@ -24,7 +24,6 @@ a {
   margin: 0 auto;
   background: #16242f;
   padding-bottom: 3em;
-  overflow: hidden;
 }
 
 .greet-user {
@@ -37,12 +36,27 @@ a {
   color: #2792e4;
 }
 
+
+.homepage {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.homepage.hidden {
+  display: none;
+}
+
+
 .header {
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
   position: sticky;
   top: 0;
   margin-bottom: 2em;
   background: #16242f;
+  border-radius: 0 0 10px 10px;
+  
+  padding: 0.5em 0;
 }
 
 .header-contents {
@@ -146,7 +160,7 @@ a {
 .links {
   display: flex;
   height: 100%;
-  max-width: 700px;
+  max-width: 640px;
   align-items: center;
   width: 90%;
   margin: 0 auto;
@@ -172,6 +186,7 @@ a {
   transform-origin: 50% 100%;
   transform: translate(-50%, 0%) scale(0);
   transition: transform 0.2s ease-in-out;
+  z-index: 10;
 }
 
 .expense-form.active {
@@ -233,14 +248,13 @@ a {
   right: 0;
   opacity: 0;
   pointer-events: none;
+  z-index: 9;
 }
 
 .overlay.active {
   pointer-events: all;
   opacity: 1;
 }
-
-
 
 @media (max-width: 350px) {
   .search-input,
@@ -280,8 +294,6 @@ a {
   pointer-events: all;
 }
 
-
-
 .user-profile-img {
   width: 40%;
   margin: 0 auto;
@@ -316,7 +328,6 @@ a {
 .user-details p {
   font-size: 0.85em;
   color: #ccc;
-
 }
 
 .logout {
@@ -332,10 +343,6 @@ a {
   left: 1em;
 }
 
-.homepage.hidden {
-  display: none;
-}
-
 .register-form {
   width: 100%;
   margin: 0 auto;
@@ -344,7 +351,6 @@ a {
   padding: 3em;
 }
 
-
 .register-form input {
   background-color: #16242f;
   outline: none;
@@ -352,7 +358,7 @@ a {
   color: #fff;
   width: 100%;
   padding: 0.77em 1em;
-  border-radius: 55px;
+  border-radius: 5px;
   border: 2px solid #1e679e;
   box-shadow: 0 0 10px rgba(30, 103, 158, 0.4);
 }
@@ -363,15 +369,33 @@ a {
 
 .register-btn {
   margin-top: 2.5em;
-  background-color: #064372;
-  border: 2px solid #c1e68cd7;
-  box-shadow: 0 0 15px #c1e68c1f;
   width: 100%;
   border-radius: 55px;
   padding: 0.8em;
   display: flex;
   justify-content: center;
+  background-color: #156cddb9;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
 
+.register-form .register-btn {
+  font-size: 1em;
+}
+
+.login-btn {
+  background-color: #2792e4;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+
+.reg-btn {
+  background-color: #156cddb9;
+  border-radius: 5px;
+  box-shadow: none;
+  border: none;
 }
 
 .register-title {
@@ -400,4 +424,84 @@ input:-webkit-autofill {
 input:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0 50px #16242f inset;
   -webkit-text-fill-color: #fff;
+}
+
+.logo {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45vh;
+  background: #1f3140;
+  border-radius: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2)
+}
+
+.logo img {
+  width: 80%;
+  max-width: 300px;
+}
+
+.landing-page {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.landing-page h1 {
+  text-align: center;
+  color: #e1f1ff;
+  padding-top: 1em;
+  margin-top: 0em;
+}
+
+.landing-page p {
+  text-align: center;
+  color: #bed8fbe8;
+}
+
+.register-form form {
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.register-content {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+
+.love {
+  margin: 0 auto;
+  font-size: 0.8em;
+  margin-top: 3em;
+  text-align: center;
+  color: #bed8fbe8;
+
+}
+
+.heart {
+  display: inline-block;
+  animation: pulse 1.5s ease-in 4;
+  color: rgba(255, 0, 0, 0.86);
+}
+
+.heart:hover {
+  cursor: pointer;
+  animation: pulse 1.5s ease-in infinite;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+	}
+
+	60% {
+		transform: scale(1.35);
+	}
+
+	100% {
+		transform: scale(1);
+	}
 }
