@@ -432,7 +432,7 @@ input:-webkit-autofill:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 45vh;
+  aspect-ratio: 1 / 1;
   background: #1f3140;
   border-radius: 20px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2)
