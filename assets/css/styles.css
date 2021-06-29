@@ -276,6 +276,9 @@ a {
     zoom: 80%;
   }
 }
+.user {
+  cursor: pointer;
+}
 
 .user-profile {
   position: fixed;
@@ -289,13 +292,11 @@ a {
   transition: transform 0.15s ease-in-out;
   pointer-events: none;
   overflow-x: hidden;
-  min-height: 100vh;
 }
 
 .user-profile-contents {
   
-  padding-top: 4em;
-  padding-bottom: 3em;
+  padding: 4em 0; 
   max-width: 700px;
   margin: 0 auto;
   position: relative;
@@ -566,4 +567,9 @@ input:-webkit-autofill:focus {
 .cross-icon:hover {
   transform: scale(1.2) rotate(90deg);
 
+}
+
+.search-bar {
+  height: 2em;
+  background: #27292d;
 }
