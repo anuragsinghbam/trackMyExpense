@@ -9,6 +9,7 @@
             <span>
               <%= user.firstName%>
             </span>
+            
           </h1>
         </a>
         <form class="search-form" action="/<%= user.username %>/search" method="GET">
@@ -98,55 +99,57 @@
 
       <div class="user-profile">
 
-        <div class="back-button">
-          <img src="/images/arrow-left.svg" alt="left arrow">
-        </div>
-        <a class="logout" href="/logout">Logout</a>
-
-        <div class="user-profile-img">
-          <img src="/images/profile.png" alt="user profile">
-        </div>
-
-        <div class="expense-balance-container">
-          <div class="balance">
-            <p>Balance</p>
-            <h3>&#8377; <%= user.balance %>
-            </h3>
+        <div class="user-profile-contents">
+          <div class="back-button">
+            <img src="/images/arrow-left.svg" alt="left arrow">
           </div>
-      
-          <div class="total-expense">
-            <p>Total expense</p>
-            <h3>
-              &#8377; <%= user.totalExpense %> <span>
-                  <%= tag ? `(${tag})` : '' %>
-                </span>
-            </h3>
+          <a class="logout" href="/logout">Logout</a>
+  
+          <div class="user-profile-img">
+            <img src="/images/profile.png" alt="user profile">
           </div>
-        </div>
-
-        <div class="user-details">
-          <div class="user-detail">
-            <p>Name</p>
-            <h3>
-              <%= user.name %>
-            </h3>
-            </h2>
+  
+          <div class="expense-balance-container">
+            <div class="balance">
+              <p>Balance</p>
+              <h3>&#8377; <%= user.balance %>
+              </h3>
+            </div>
+        
+            <div class="total-expense">
+              <p>Total expense</p>
+              <h3>
+                &#8377; <%= user.totalExpense %> <span>
+                    <%= tag ? `(${tag})` : '' %>
+                  </span>
+              </h3>
+            </div>
           </div>
-          <div class="user-detail">
-            <p>Username</p>
-            <h3>
-              <%= user.username %>
-            </h3>
-            </h2>
+  
+          <div class="user-details">
+            <div class="user-detail">
+              <p>Name</p>
+              <h3>
+                <%= user.name %>
+              </h3>
+              </h2>
+            </div>
+            <div class="user-detail">
+              <p>Username</p>
+              <h3>
+                <%= user.username %>
+              </h3>
+              </h2>
+            </div>
+            <div class="user-detail">
+              <p>Email</p>
+              <h3>
+                <%= user.email %>
+              </h3>
+              </h2>
+            </div>
+            
           </div>
-          <div class="user-detail">
-            <p>Email</p>
-            <h3>
-              <%= user.email %>
-            </h3>
-            </h2>
-          </div>
-          
         </div>
 
         

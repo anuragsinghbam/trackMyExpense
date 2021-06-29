@@ -90,6 +90,10 @@ app.use('/', expenseRouter)
 app.use('/', balanceRouter)
 app.use('/', userRouter)
 
+app.use((err, req, res, next) => {
+  res.send(err)
+})
+
 const port = process.env.PORT || 3000
 
 app.listen(port, () => {

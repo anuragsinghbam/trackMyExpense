@@ -8,6 +8,7 @@ const userIcon = document.querySelector('.user')
 const backButton = document.querySelector('.back-button')
 const homepage = document.querySelector('.homepage')
 
+
 searchInput.addEventListener('focus', (e) => {
   searchForm.classList.add('focused')
 })

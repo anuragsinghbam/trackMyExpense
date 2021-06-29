@@ -9,13 +9,19 @@ router.route('/register').get(auth.renderRegister).post(auth.registerUser)
 router
   .route('/login')
   .get(auth.renderLogin)
-  .post(
-    passport.authenticate('local', {
-      faliureFlash: true,
-      faliureRedirect: '/login',
-    }),
-    auth.loginUser
-  )
+  .post((req, res, next) => {
+    passport.authenticate('local', (err, user, info) => {
+      if (!user) {
+        req.flash('error', 'Username or password is incorrect')
+        return res.redirect('/login')
+      }
+      req.logIn(user, (err) => {
+        if(err) res.redirect('/login')
+        next()
+      })
+      
+    })(req, res, next)
+  }, auth.loginUser)
 
 router.get('/logout', auth.logout)
 

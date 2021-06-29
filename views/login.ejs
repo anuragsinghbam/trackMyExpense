@@ -8,6 +8,7 @@
 </div>
 <div class="register-form">
   <form action="/login" method="POST">
+    <%- include('./partials/error') %> 
     <div class="form-input">
       <label for="username">Username</label>
       <input type="text" name="username" id="username" required />
@@ -18,5 +19,15 @@
     </div>
     <button class="register-btn login-btn">Login</button>
   </form>
-  <p class="love">Made with <span class="heart">❤</span> by <a href="https://anuragsinghbam.com/" target="_blank"><b>Anurag Singh</b></a></p>
+  <p class="love">
+    Made with <span class="heart">❤</span> by
+    <a href="https://anuragsinghbam.com/" target="_blank"
+      ><b>Anurag Singh</b></a
+    >
+  </p>
 </div>
+
+
+
+
+
