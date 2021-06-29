@@ -82,15 +82,15 @@
       <form class="expense-form" action="/expense" method="POST">
         <div class="form-input">
           <label for="name">Spent On</label>
-          <input type="text" name="name" id="name" autofocus required />
+          <input type="text" name="name" id="name" autofocus autocomplete="off" required />
         </div>
         <div class="form-input">
           <label for="amount">Amount</label>
-          <input type="number" name="amount" id="amount" min="0" required />
+          <input type="number" name="amount" id="amount" min="0" autocomplete="off" required />
         </div>
         <div class="form-input">
           <label for="tags">Tags</label>
-          <input type="text" name="tags" id="tags" required />
+          <input type="text" name="tags" id="tags" autocomplete="off" required />
         </div>
 
         <button class="add-btn"><img src="images/check-circle.svg" alt="" /></button>
