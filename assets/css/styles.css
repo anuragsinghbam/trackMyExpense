@@ -165,7 +165,7 @@ a {
   height: 100%;
   max-width: 640px;
   align-items: center;
-  width: 90%;
+  width: 85%;
   margin: 0 auto;
   justify-content: space-between;
 }
@@ -285,7 +285,6 @@ a {
   right: 0;
   background: #16242f;
   overflow: scroll;
-  padding-bottom: 3em;
   transform: translateX(100%);
   transition: transform 0.15s ease-in-out;
   pointer-events: none;
@@ -296,7 +295,7 @@ a {
 .user-profile-contents {
   
   padding-top: 4em;
-  padding-bottom: 2em;
+  padding-bottom: 3em;
   max-width: 700px;
   margin: 0 auto;
   position: relative;
@@ -448,6 +447,7 @@ input:-webkit-autofill:focus {
   align-items: center;
   justify-content: center;
   aspect-ratio: 1 / 1;
+  padding: 2.5em 0;
   background: #1f3140;
   border-radius: 8px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
@@ -457,6 +457,7 @@ input:-webkit-autofill:focus {
   width: 80%;
   max-width: 300px;
 }
+
 
 .landing-page {
   width: 80%;
@@ -565,8 +566,4 @@ input:-webkit-autofill:focus {
 .cross-icon:hover {
   transform: scale(1.2) rotate(90deg);
 
-}
-
-.user-profile {
-  /* max-width: 700px; */
 }
